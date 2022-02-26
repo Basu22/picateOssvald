@@ -1,0 +1,68 @@
+@import "/src/SCSS/variables";
+
+.navegadorHamburguesa{
+    display: none;
+}
+
+header{
+    align-self: flex-start;
+    position: sticky;
+    top:0px;
+    z-index: 99999;
+    background-color: #ffff;
+    .contenedorCabecera{
+        margin-top: 20px;
+        .filaHeader{
+            @include flexbox_justify(space-between,wrap,row);
+            .columnaNavegador{
+                align-self: center;
+                .contenedorNav{
+                    border-radius: $bordes-redondeados;
+                    ul{
+                        font-size: map-get($tamañoTexto, tamañoNav);
+                        @include flexbox_justify(space-between,wrap,row);
+                        height: auto;
+                        list-style: none;
+                        .avisoCarrito{
+                            position:absolute;
+                            padding: 10px;
+                            top:70%;
+                            left:80%;
+                            background: #000;
+                            color: #ffff;
+                            display: none;
+                            border-radius: 5%;
+                        }
+                        .carritoCompra{
+                            height: 7vh;
+                        }
+                    }
+                    a{
+                        text-decoration: none;
+                        color: #000;
+                        #cantidadCarrito{
+                            position:absolute;
+                            padding: 0 15px;
+                            color: #fff;
+                            top:20%;
+                            left:95%;
+                            border-radius: 90%;
+                            background: red;
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .logoCabecera{
+                border-radius: 50px;
+                height: 20vh;
+            }
+        }
+    }
+}
+
+
+.headerScroll{
+    max-height: 7vh;
+    transition: max-height 4s ease 4s;
+}
