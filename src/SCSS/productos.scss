@@ -1,0 +1,8 @@
+@import "/src/SCSS/variables";
+
+.contenedorTitulo{
+    .primerTitulo{
+        @include flexbox_justify(center,wrap,row);
+        font-size: 2rem;
+    }
+}

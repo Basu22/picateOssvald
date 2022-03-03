@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NavBar from './Componentes/NavBar';
+import App from './App';
 
-ReactDOM.render(<NavBar />,document.getElementById('root'));
+ReactDOM.render(<App />,document.getElementById('root'));
