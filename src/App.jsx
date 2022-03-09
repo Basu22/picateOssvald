@@ -6,7 +6,7 @@ function App() {
   return (
     <>
     <NavBar />
-    <NuestrosProductos />
+    <NuestrosProductos gretting="Nuestros Productos"/>
     </>
   )
 }

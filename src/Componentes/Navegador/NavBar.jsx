@@ -5,16 +5,16 @@ import { CartWidget } from './CartWidget';
 function NavBar() {
   return (
 <header>
-        <section class="contenedorCabecera container-fluid">
-            <section class="row filaHeader">
-                <section class="col-4 col-lg-4 contenedorImagen">
+        <section className="contenedorCabecera container-fluid">
+            <section className="row filaHeader">
+                <section className="col-4 col-lg-4 contenedorImagen">
                     <a href="index.html">
-                        <img class="logoCabecera" src="./img/navegador/logo.png" alt="Logo de Picate Esta" loading="lazy" />
+                        <img className="logoCabecera" src="./img/navegador/logo.png" alt="Logo de Picate Esta" loading="lazy" />
                     </a>
                 </section>
-                <section class="columnaNavegador col-8 col-lg-8">
-                    <nav class="contenedorNav">
-                        <ul class="mb-0 px-0 listadoCabecera">
+                <section className="columnaNavegador col-8 col-lg-8">
+                    <nav className="contenedorNav">
+                        <ul className="mb-0 px-0 listadoCabecera">
                             <li>
                                 <a href="nosotros.html">Nosotros</a>
                             </li>
