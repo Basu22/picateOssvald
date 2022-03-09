@@ -1,9 +1,9 @@
 import '../../SCSS/productos.scss';
 
-export default function NuestrosProductos(props) {
+export default function NuestrosProductos({gretting}) {
   return (
 <section className="row contenedorTitulo">
-    <article className="primerTitulo">{props.gretting}</article>
+    <article className="primerTitulo">{gretting}</article>
 </section>
   )
 }
