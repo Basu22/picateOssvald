@@ -47,15 +47,9 @@ $coloresMaps:(
     margin-bottom: 5%;
 }
 
-@mixin flexbox_justify ($justify, $wrap, $direction) {
+@mixin flexbox_style ($justify, $align, $wrap, $direction) {
     display: flex;
     justify-content: $justify;
-    flex-wrap: $wrap;
-    flex-direction: $direction;
-}
-
-@mixin flexbox_align ($align, $wrap, $direction) {
-    display: flex;
     align-content: $align;
     flex-wrap: $wrap;
     flex-direction: $direction;
@@ -82,7 +76,7 @@ $coloresMaps:(
 }
 
 %animacionNosotros{
-    @include flexbox_justify(center,wrap,row);
+    @include flexbox_style(center,center,wrap,row);
     align-content:center;
     position: absolute;
     text-align: center;
@@ -108,7 +102,7 @@ $coloresMaps:(
     left:0;
     opacity:0;
     pointer-events:none;
-    @include flexbox_justify (center,wrap,row);
+    @include flexbox_style(center,center,wrap,row);
     align-content: center;
     %modalContenido{
         border-radius: $bordes-redondeados;
@@ -143,7 +137,7 @@ $coloresMaps:(
             a{
                 text-decoration: none;
                 color: rgb(0, 0, 0);
-                @include flexbox_justify(space-evenly,wrap,row);
+                @include flexbox_style(space-evenly,center,wrap,row);
                 align-items: center;
             }
         }
@@ -183,7 +177,7 @@ $coloresMaps:(
         @extend %tituloTablas;
     }
     ul{
-        @include flexbox_justify (center,wrap,row);
+        @include flexbox_style(center,center,wrap,row);
         list-style: none;
         padding:5px 0 0 15px;
         color: #ffff;

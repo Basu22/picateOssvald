@@ -13,14 +13,14 @@ header{
     .contenedorCabecera{
         margin-top: 20px;
         .filaHeader{
-            @include flexbox_justify(space-between,wrap,row);
+            @include flexbox_style(space-between,center,wrap,row);
             .columnaNavegador{
                 align-self: center;
                 .contenedorNav{
                     border-radius: $bordes-redondeados;
                     ul{
                         font-size: map-get($tamañoTexto, tamañoNav);
-                        @include flexbox_justify(space-between,wrap,row);
+                        @include flexbox_style(space-between,center,wrap,row);
                         height: auto;
                         list-style: none;
                         .avisoCarrito{

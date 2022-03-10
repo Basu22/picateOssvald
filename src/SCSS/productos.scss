@@ -1,8 +1,33 @@
 @import "/src/SCSS/variables";
 
 .contenedorTitulo{
+    @include flexbox_style(center, center,wrap,row);
     .primerTitulo{
-        @include flexbox_justify(center,wrap,row);
+        @include flexbox_style(center,center, wrap,row);
         font-size: 2rem;
     }
+    .cajaProducto{
+        width: 30%;
+        .cajaBotones{
+            @include flexbox_style(space-evenly, center,wrap,row);
+            .botones{
+                @include flexbox_style(center, center,wrap,row);
+                border-radius: 20%;
+                width: 30px;
+                height: auto;
+            }
+        }
+        .cajaStock{
+            @include flexbox_style(center, center, wrap,row);
+        }
+        
+        .cajaAgregar{
+            @include flexbox_style(center, center, wrap,row);
+            .botonAgregar{
+                padding:5px;
+                border-radius: 5%;
+            }
+        }
+    }
 }
+
