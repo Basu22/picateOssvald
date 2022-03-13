@@ -5,29 +5,57 @@
     .primerTitulo{
         @include flexbox_style(center,center, wrap,row);
         font-size: 2rem;
+        padding-bottom: 5%;
     }
-    .cajaProducto{
-        width: 30%;
-        .cajaBotones{
-            @include flexbox_style(space-evenly, center,wrap,row);
-            .botones{
-                @include flexbox_style(center, center,wrap,row);
-                border-radius: 20%;
-                width: 30px;
-                height: auto;
+    .contenedorProductos{
+        @include flexbox_style(space-evenly, center, wrap,row);
+        .productosItems{
+            @include flexbox_style(center, center, wrap,column);
+            align-items: center;
+            border:5px #C6C6C6 solid;
+            background-color: #fff;
+            border-radius: 20%;
+            padding:15px 0;
+            img{
+                width: 100%;
+            }
+            .cajaProducto{
+                width: 100%;
+                @include flexbox_style(center, stretch,wrap,column);
+                .cajaBotones{
+                    @include flexbox_style(space-evenly, center,wrap,row);
+                    
+                    .botones{
+                        @include flexbox_style(center, center,wrap,row);
+                        border-radius: 20%;
+                        width: 30px;
+                        font-size: 1.5rem;
+                        height: auto;
+                        background-color: #fff;
+                        border: 1px #fff solid;
+                        box-shadow: #C6C6C6 1px 1px 1px 1px;
+                    }
+                }
+                .cajaStock{
+                    @include flexbox_style(center, center, wrap,row);
+                }
+                
+                .cajaAgregar{
+                    @include flexbox_style(center, center, wrap,row);
+                    .botonAgregar{
+                        padding:5px;
+                        border-radius: 5%;
+                        background-color:#fff;
+                        border: 1px #fff solid;
+                        box-shadow: #C6C6C6 1px 1px 1px 1px;
+                    }
+                }
             }
         }
-        .cajaStock{
-            @include flexbox_style(center, center, wrap,row);
-        }
-        
-        .cajaAgregar{
-            @include flexbox_style(center, center, wrap,row);
-            .botonAgregar{
-                padding:5px;
-                border-radius: 5%;
-            }
-        }
-    }
+    } 
+
 }
+
+
+
 
