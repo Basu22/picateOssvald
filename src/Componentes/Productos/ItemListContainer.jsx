@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import '../../SCSS/productos.scss';
 import ItemList from './ItemList';
-import data from '../Json/productos.json'
-import ItemDetailContainer from './ItemDetailContainer';
+import picadas from '../Json/productos.json'
 
 export default function ItemListContainer({gretting}) {
 
-  const [productos, setProductos] = useState(data)
+  const [productos, setProductos] = useState(picadas)
 
   function recaudarProductos(){
     return new Promise ((res,rej)=>{
@@ -30,7 +29,7 @@ export default function ItemListContainer({gretting}) {
 <section className="row contenedorTitulo">
     <article className="primerTitulo"><h1>{gretting}</h1></article>
     <ItemList productos={productos}/>
-    <ItemDetailContainer />
+
 </section>
   )
 }
