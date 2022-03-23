@@ -1,12 +1,12 @@
+import { Link } from "react-router-dom"
+
 export const CartWidget = () => {
   return (
-    <>
-        <a href="carrito.html">
+    <Link to="/">
             <article>
-                <img className="carritoCompra" src="./img/navegador/agregar-carrito.png" alt="Carrito de Compras" loading="lazy" />
-            </article>
-        </a>
-    </>
+                <img className="carritoCompra" src="../img/navegador/agregar-carrito.png" alt="Carrito de Compras" loading="lazy" />
+            </article>    
+    </Link>
   )
 }
 
