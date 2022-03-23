@@ -3,6 +3,6 @@
     .primerTitulo{
         @include flexbox_style(center,center, wrap,row);
         font-size: 2rem;
-        padding-bottom: 5%;
+        padding-bottom: 2%;
     }
 }

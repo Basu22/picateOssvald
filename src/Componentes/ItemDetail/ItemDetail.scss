@@ -2,8 +2,25 @@
     @include flexbox_style(center, center, wrap,row);
     .itemDetalle{
         @include flexbox_style(center, center, wrap,row);
-        img{
-            width: 100%;
+        .contenedorDivision1{
+            @include flexbox_style(center, center, wrap,row);
+            .contenedorTitulo{
+                @include flexbox_style(center, center, wrap,row);
+            }
+            .contenedorSubtitulo{
+                @include flexbox_style(center, center, wrap,row);
+            }
+            .contenedorImagen{
+                @include flexbox_style(center, center, wrap,row);
+                .imgPicada{
+                    width: 100%;
+                }
+            }
+        }
+        .contenedorDivision2{
+            @include flexbox_style(space-around, center, wrap,column);
+            border-left: 1px solid #000;
+            align-items: center;
         }
     }
 }

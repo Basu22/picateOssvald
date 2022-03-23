@@ -1,0 +1,11 @@
+.contenedorLoading{
+    height: 50vh;
+    @include flexbox_style(space-evenly, center, wrap,column);
+    align-items: center;
+    .contenedorImagen{
+        @include flexbox_style(center, center, wrap,column);
+        .logoLoading{
+            width: 50%;
+        }
+    }
+}

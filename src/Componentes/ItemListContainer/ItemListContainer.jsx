@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import {ItemList} from '../ItemList/ItemList';
 import { GetData } from '../GetData/GetData'
 import { useParams } from 'react-router-dom';
+import { Loading } from '../Loading/Loading';
 
 
 export const ItemListContainer=({gretting})=> {
@@ -34,7 +35,7 @@ export const ItemListContainer=({gretting})=> {
   return (
     <section className="row contenedorTitulo g-0">
         <article className="primerTitulo"><h1>{categoryId?gretting +" "+ categoryId:gretting}</h1></article>
-        {loading ? "loading...." : <ItemList productos={productos}/>}
+        {loading ? <Loading /> : <ItemList productos={productos}/>}
     </section>
   )
 }
