@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export const Item =({id,comen,pican,tipo,costo,venta,img})=> {
+export const Item =({id,comen,pican,tipo})=> {
 
     return (
     <article key={id} className="col-3 productosItems">

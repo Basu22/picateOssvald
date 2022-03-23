@@ -7,7 +7,7 @@ const sumarProducto = ()=>{
   (contador<stock)&&setContador(contador+1)
 }
 const restarProducto=()=>{
-  (contador>0)&&setContador(contador-1)
+  (contador>1)&&setContador(contador-1)
 
 }
   return (
