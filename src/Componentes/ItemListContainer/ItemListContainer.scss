@@ -1,0 +1,8 @@
+.contenedorTitulo{
+    @include flexbox_style(center, center,wrap,row);
+    .primerTitulo{
+        @include flexbox_style(center,center, wrap,row);
+        font-size: 2rem;
+        padding-bottom: 5%;
+    }
+}

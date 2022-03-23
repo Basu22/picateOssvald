@@ -1,0 +1,13 @@
+.productosItems{
+    @include flexbox_style(center, center, wrap,column);
+    box-shadow: 15px 10px 20px 1px #C6C6C6;
+    align-items: center;
+    padding:15px 0;
+    margin: 20px 15px;
+    border-radius: 50px;
+    border: 1px solid #000;
+    .botonDetalle{
+        padding: 5px;
+        @include fondo-botones(5%);
+    }
+}

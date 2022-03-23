@@ -1,7 +1,6 @@
-import '../../SCSS/productos.scss';
 import { useState } from "react";
 
-export default function ItemCount({stock,inicio, onAdd}) {
+export const ItemCount=({stock,inicio, onAdd}) =>{
 const [contador, setContador]=useState(inicio);
 
 const sumarProducto = ()=>{

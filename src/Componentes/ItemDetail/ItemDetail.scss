@@ -1,0 +1,9 @@
+.contenedorDetalles{
+    @include flexbox_style(center, center, wrap,row);
+    .itemDetalle{
+        @include flexbox_style(center, center, wrap,row);
+        img{
+            width: 100%;
+        }
+    }
+}

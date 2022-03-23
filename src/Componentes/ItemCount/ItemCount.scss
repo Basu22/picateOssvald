@@ -1,0 +1,26 @@
+.cajaProducto{
+    width: 70%;
+    @include flexbox_style(center, stretch,wrap,column);
+    .cajaBotones{
+        @include flexbox_style(space-evenly, center,wrap,row);
+        
+        .botones{
+            @include flexbox_style(center, center,wrap,row);
+            width: 30px;
+            font-size: 1.5rem;
+            height: auto;
+            @include fondo-botones(20%);
+        }
+    }
+    .cajaStock{
+        @include flexbox_style(center, center, wrap,row);
+    }
+    
+    .cajaAgregar{
+        @include flexbox_style(center, center, wrap,row);
+        .botonAgregar{
+            padding: 5px;
+            @include fondo-botones(5px);
+        }
+    }
+}

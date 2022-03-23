@@ -1,8 +1,6 @@
-import '../../SCSS/variables.scss';
-import '../../SCSS/index.scss';
 import { CartWidget } from './CartWidget';
 
-function NavBar() {
+export const NavBar=()=> {
   return (
 <header>
         <section className="contenedorCabecera container-fluid">
@@ -38,5 +36,3 @@ function NavBar() {
 </header>
   );
 }
-
-export default NavBar;

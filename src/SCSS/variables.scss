@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
 /* font-family: 'Dongle', sans-serif; */
-
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 /* font-family: 'Ubuntu', sans-serif; */
-
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 /* font-family: 'Raleway', sans-serif; */
 @import "~bootstrap/scss/bootstrap";
@@ -39,6 +37,13 @@ $coloresMaps:(
     borde-parrafo: #828282,
     sombras: #7d7d7d,
 );
+
+@mixin fondo-botones($borderRadius) {
+    border-radius: $borderRadius;
+    background-color:#fff;
+    border: 1px #fff solid;
+    box-shadow: #C6C6C6 1px 1px 1px 1px;
+}
 
 
 /* MIXINS */
@@ -80,162 +85,7 @@ $coloresMaps:(
     color: #000;
 }
 
-%animacionNosotros{
-    @include flexbox_style(center,center,wrap,row);
-    align-content:center;
-    position: absolute;
-    text-align: center;
-    padding: 0 1%;
-    top:0%;
-    left:10%;
-    width:80%;
-    height: 100%;
-    transform: scale(0);
-    overflow: hidden;
-    border: #fff 1px Solid;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: $bordes-redondeados; 
-}
 
-%modalTablas{
-    background-color: rgba(0,0,0,.8);
-    position:fixed;
-    top:-1100px;
-    right:0;
-    bottom:0;
-    left:0;
-    opacity:0;
-    pointer-events:none;
-    @include flexbox_style(center,center,wrap,row);
-    align-content: center;
-    %modalContenido{
-        border-radius: $bordes-redondeados;
-        align-content: center;
-        background-color:#ffff;
-        width:auto;
-        height: auto;
-        padding: 10px 20px;
-        position: relative;
-        p{
-            text-align: center;
-            margin-bottom: 0;
-        }
-        h2{
-            text-align: center;
-            font-size: map-get($tamañoTexto, tamañoP);
-            color: #ffff;
-            background-color: rgba(255, 0, 0, 0.57);
-            border-radius: $bordes-redondeados;
-        }
-        ul,li{
-            text-align: center;
-            list-style: none;
-            align-content: center;
-            font-size:map-get($tamañoTexto, tamañoP);
-        }
-        .listaModal{
-            margin:0;
-            padding:0;
-        }
-        .pedilaYa{
-            a{
-                text-decoration: none;
-                color: rgb(0, 0, 0);
-                @include flexbox_style(space-evenly,center,wrap,row);
-                align-items: center;
-            }
-        }
-    }    
-}
-
-%tituloTablas{
-    text-align: center;
-    font-size:map-get($tamañoTexto, tamañoP);
-    border-radius: $bordes-redondeados;
-    color: #ffff;
-    background-color: rgba(255, 0, 0, 0.57);
-}
-
-%animacionModal{
-    opacity:1;
-    pointer-events:auto;
-    top:0;
-    transition: all 1s;
-}
-
-%animacionCoverTablas{
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    overflow: hidden;
-    width: 100%;
-    height: 0;
-    border-radius: $bordes-redondeados;
-    transition: 1s ease;
-    p{
-        text-align: center;
-        margin-bottom: 0;
-    }
-    h2{
-        @extend %tituloTablas;
-    }
-    ul{
-        @include flexbox_style(center,center,wrap,row);
-        list-style: none;
-        padding:5px 0 0 15px;
-        color: #ffff;
-        text-align: center;
-        font-size: map-get($tamañoTexto, tamañoLItablas);
-    }
-    .pedilaYa{
-        position:absolute;
-        top:42%;
-        left:47%;
-        a{
-            text-decoration: none;
-            color: #fff;
-            .logoWts{
-                width: $iconos-redes;
-            }
-        }
-    }
-}
-
-
-@mixin hamburguesa{
-    display: block;
-    .listadoHamburguesa{
-        display: none;
-        background-color: rgba(0, 0, 0, 0.8);
-        width: 90vw;
-        height: auto;
-        list-style: none;
-        font-size: map-get($tamañoTexto, tamañoNav);
-        transition: height 2s ease ;
-        z-index: 99999;
-        padding-left: 0;         
-        li {
-            text-align: center;
-            padding-top: 15px;      
-            a{
-                text-decoration: none;
-                color: #fff;
-            }
-        }
-    }
-    .checkHamburguesa{
-        display:none;
-        &:checked  ~ .listadoHamburguesa{
-            display:block;
-            position: absolute;
-        }
-    }
-    .imgHamburguesa{
-        height: $menuHamburguesa;
-    }
-}
 
 
 *{

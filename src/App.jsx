@@ -1,7 +1,12 @@
 import React from 'react'
-import NavBar from './Componentes/Navegador/NavBar'
-import ItemDetailContainer from './Componentes/Productos/ItemDetailContainer'
-import ItemListContainer from './Componentes/Productos/ItemListContainer'
+import {NavBar} from './Componentes/NavBar/NavBar'
+import {ItemDetailContainer} from './Componentes/ItemDetailContainer/ItemDetailContainer'
+import {ItemListContainer} from './Componentes/ItemListContainer/ItemListContainer'
+//ESTILOS SASS
+import './SCSS/styles.scss';
+
+
+
 
 export default function App() {
   return (
