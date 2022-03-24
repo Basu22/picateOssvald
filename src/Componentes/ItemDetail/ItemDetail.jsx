@@ -1,33 +1,57 @@
+import { useState } from 'react'
+import { FinalizaCompra } from '../FinalizaCompra/FinalizaCompra'
 import { ItemCount } from '../ItemCount/ItemCount'
 
-export const ItemDetail=({detalle})=> {
-  const onAdd = ()=>{
-    console.log("agregamos al carrito")
-}
+export const ItemDetail=({id, comen, pican, tipo, img, venta, contador, setContador})=> {
+  
+  const [finalizacompra, setFinalizacompra] = useState(false);
 
+
+
+  const onAdd = ()=>{
+    if(contador>0){
+      const itemCarrito={
+        id,
+        comen,
+        pican,
+        tipo,
+        contador,
+        venta
+      }
+      setFinalizacompra(true)
+      console.log(itemCarrito)
+    }else{
+      console.log("debe de ingresar un producto!")
+    }
+}
   return (
     <section className='row contenedorDetalles g-0'>
-      {detalle.map((d)=>
-        <article key={d.id} className='col-12 itemDetalle'>
+        <article key={id} className='col-12 itemDetalle'>
           <article className='col-6 contenedorDivision1'>
             <article className='col-12 contenedorTitulo'>
-              <h2>Comen {d.comen} Pican {d.pican}</h2>
+              <h2>Comen {comen} Pican {pican}</h2>
             </article>
             <article className='col-12 contenedorSubtitulo'>
-              <h3>Tabla {d.tipo}</h3> 
+              <h3>Tabla {tipo}</h3> 
             </article>
             <article className='col-12 contenedorImagen'>
-              <img src={d.img} className="imgPicada" alt={"Imagen Comen "+d.comen+" Pican "+d.pican+" "+d.tipo} />
+              <img src={img} className="imgPicada" alt={"Imagen Comen "+comen+" Pican "+pican+" "+tipo} />
             </article>
           </article>
           <article className='col-5 contenedorDivision2'>
             <article className='contenedorPrecio'>
-              <h3>Precio:$ {d.venta.toFixed(2)}</h3>
+              <h3>Precio:$ {(venta*contador).toFixed(2)}</h3>
             </article>
-            <ItemCount stock={10} inicio={1} onAdd={onAdd}/>
+            {finalizacompra
+            ?<FinalizaCompra/>
+            :<ItemCount 
+                stock={10} 
+                onAdd={onAdd} 
+                contador={contador}
+                setContador={setContador}/>
+          }
           </article>
         </article>
-      )}
     </section>
   )
 }

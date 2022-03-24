@@ -1,15 +1,12 @@
-import { useState } from "react";
-
-export const ItemCount=({stock,inicio, onAdd}) =>{
-const [contador, setContador]=useState(inicio);
+export const ItemCount=({stock,onAdd,contador,setContador}) =>{
 
 const sumarProducto = ()=>{
   (contador<stock)&&setContador(contador+1)
 }
 const restarProducto=()=>{
-  (contador>1)&&setContador(contador-1)
-
+  (contador>0)&&setContador(contador-1)
 }
+
   return (
     <section className="cajaProducto">
         <section className="cajaBotones">

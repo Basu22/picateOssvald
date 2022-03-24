@@ -1,0 +1,7 @@
+.cajaFinalizacompra{
+    @include flexbox_style(center, stretch,wrap,column);
+    .botonFinalizar{
+        padding: 5px;
+        @include fondo-botones(5px);
+    }
+}

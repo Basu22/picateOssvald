@@ -1,10 +1,10 @@
-import picadas from '../../Json/productos.json'
+import {productos} from '../../Json/productos.js'
 
 export const GetData = () =>{
     return new Promise( (res,rej) => {
         setTimeout(()=>{
-            if (picadas){
-                res(picadas)
+            if (productos){
+                res(productos)
             }else{
                 rej("error de conexión de base de datos!")
             }
