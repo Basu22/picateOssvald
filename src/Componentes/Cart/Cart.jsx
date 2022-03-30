@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { CartContext } from "../../Context/CartContext"
 import { FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 export const Cart= ()=>{
@@ -52,8 +53,19 @@ export const Cart= ()=>{
                 <h3>El total de su compra es de</h3>
                 <h2>${SumaTotal().toFixed(2)}</h2>
                 <article className="contenedorBotones">
+                {
+                (cart.length>0)
+                ?<>                
                     <button>Finalizar Compra</button>
-                    <button>Seguir Comprando</button>
+                    <Link to="/">
+                        <button>Seguir Comprando</button>
+                    </Link>
+                </>
+                :   <Link to="/">
+                        <button>Ir a Comprar</button>
+                    </Link>   
+                
+                }
                 </article>
             </article>
         </section>

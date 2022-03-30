@@ -36,6 +36,7 @@
             @include flexbox_style(space-around, center, wrap, row);
             button{
                 @include fondo-botones(5px);
+                padding: 5px;
             }
         }
     }

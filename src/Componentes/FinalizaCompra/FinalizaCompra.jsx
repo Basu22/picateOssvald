@@ -5,7 +5,7 @@ export const FinalizaCompra =()=>{
     return(
         <article className="cajaFinalizacompra">
             <Link to="/cart">
-                <button className="botonFinalizar">Finalizar Compra</button>
+                <button className="botonFinalizar">Terminar mi Compra</button>
             </Link>
         </article>
     )
