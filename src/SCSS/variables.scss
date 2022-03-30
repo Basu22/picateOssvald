@@ -6,6 +6,8 @@
 /* font-family: 'Raleway', sans-serif; */
 @import "~bootstrap/scss/bootstrap";
 
+
+
 body, header{
     background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
 }
@@ -19,6 +21,13 @@ $bordes-redondeados: 20px;
 $iconos-redes: 5vh;
 $sautarcion:saturate(1.8);
 $menuHamburguesa: 5vh;
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: $fuentebody;
+}
 
 /* MAPAS */
 $tamañoTexto:(
@@ -88,8 +97,4 @@ $coloresMaps:(
 
 
 
-*{
-    padding: 0px;
-    margin: 0px;
-    font-family: $fuentebody;
-}
+

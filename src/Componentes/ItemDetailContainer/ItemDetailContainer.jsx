@@ -7,7 +7,7 @@ import { Loading } from '../Loading/Loading'
 export const ItemDetailContainer=()=> {
 
     const [detalleProductos, setDetalleProductos] = useState([])
-    const [contador, setContador]=useState(0);
+    const [cantidad, setCantidad]=useState(0);
     const [loading, setLoading] = useState(false)
     const {id} = useParams()
 
@@ -18,7 +18,6 @@ export const ItemDetailContainer=()=> {
         GetData()
             .then((data)=>{
                     setDetalleProductos(data.find((el)=>el.id===id))
-                    console.log(data.find((el)=>el.id===id))
             })
             .catch((err)=>console.log(err))
             .finally(()=>setLoading(false))
@@ -30,8 +29,8 @@ export const ItemDetailContainer=()=> {
         ?<Loading/>
         :<ItemDetail 
             {...detalleProductos}  
-            contador={contador}
-            setContador={setContador}
+            cantidad={cantidad}
+            setCantidad={setCantidad}
         />}
         </>   
     )

@@ -1,29 +1,35 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { CartContext } from '../../Context/CartContext';
 import { FinalizaCompra } from '../FinalizaCompra/FinalizaCompra'
 import { ItemCount } from '../ItemCount/ItemCount'
 
-export const ItemDetail=({id, comen, pican, tipo, img, venta, contador, setContador})=> {
+export const ItemDetail=({id, comen, pican, tipo, img, venta, cantidad, stock, setCantidad})=> {
   
   const [finalizacompra, setFinalizacompra] = useState(false);
-
-
-
+  
+  const {AddCart, IsInCart, buscarItem } = useContext(CartContext)
+  
   const onAdd = ()=>{
-    if(contador>0){
-      const itemCarrito={
-        id,
-        comen,
-        pican,
-        tipo,
-        contador,
-        venta
-      }
+    if(cantidad>0&&!IsInCart(id)){
+      //armo un objeto con los datos que necesito para armar mi carrito.
+      const itemCarrito={id,comen,pican,tipo,cantidad,venta,img}
+      // botón de finalización de compra activada.
       setFinalizacompra(true)
-      console.log(itemCarrito)
+      // envio el item al que le di agregar al AddCart de mi contexto.
+      AddCart(itemCarrito)
+    }else if (cantidad>0&&IsInCart(id)){
+      //busco el item que es
+      const item = buscarItem(id)
+      item.cantidad = item.cantidad + cantidad
+      item.stock = item.stock - cantidad
+      
+      setFinalizacompra(true)
     }else{
-      console.log("debe de ingresar un producto!")
+      // genero un alerta para infomar que debe de seleccionar un producto para e carrito.
+      alert("debe de ingresar un producto!") 
     }
-}
+  }
+  
   return (
     <section className='row contenedorDetalles g-0'>
         <article key={id} className='col-12 itemDetalle'>
@@ -40,16 +46,17 @@ export const ItemDetail=({id, comen, pican, tipo, img, venta, contador, setConta
           </article>
           <article className='col-5 contenedorDivision2'>
             <article className='contenedorPrecio'>
-              <h3>Precio:$ {(venta*contador).toFixed(2)}</h3>
+              <h3>Precio:$ {(venta*cantidad).toFixed(2)}</h3>
             </article>
-            {finalizacompra
+            {
+            finalizacompra
             ?<FinalizaCompra/>
             :<ItemCount 
                 stock={10} 
                 onAdd={onAdd} 
-                contador={contador}
-                setContador={setContador}/>
-          }
+                cantidad={cantidad}
+                setCantidad={setCantidad}/>
+            }
           </article>
         </article>
     </section>

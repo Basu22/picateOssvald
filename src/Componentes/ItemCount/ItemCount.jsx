@@ -1,21 +1,21 @@
-export const ItemCount=({stock,onAdd,contador,setContador}) =>{
+export const ItemCount=({stock,onAdd,cantidad,setCantidad}) =>{
 
 const sumarProducto = ()=>{
-  (contador<stock)&&setContador(contador+1)
+  (cantidad<stock)&&setCantidad(cantidad+1)
 }
 const restarProducto=()=>{
-  (contador>0)&&setContador(contador-1)
+  (cantidad>0)&&setCantidad(cantidad-1)
 }
 
   return (
     <section className="cajaProducto">
         <section className="cajaBotones">
           <button className="botones" onClick={restarProducto}> - </button>
-          <span>{contador}</span>
+          <span>{cantidad}</span>
           <button className="botones" onClick={sumarProducto}> + </button>
         </section>
         <section className="cajaStock">
-          <p>Stock: {stock-contador} productos</p>
+          <p>Stock: {stock-cantidad} productos</p>
         </section>
         <section className='cajaAgregar'>
           <button className="botonAgregar" onClick={onAdd}>Agregar Carrito</button>

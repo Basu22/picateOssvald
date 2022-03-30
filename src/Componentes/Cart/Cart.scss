@@ -1,0 +1,42 @@
+.seccionCarrito{
+    width: 100%;
+    @include flexbox_style(space-evenly, center, wrap, row);
+    .tituloCarrito{
+        text-align: center;
+        padding: 2%;
+    }
+    .containerCarrito{
+        @include flexbox_style(space-around, center, wrap, row);
+        align-items: center;
+        text-align: center;
+        width: 80%;
+        padding: 20px 0 ;
+        margin: 20px 0 ;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50px;
+        p{
+            margin: 0;
+        }
+        .contenedorImagen{
+            width: 20%;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .contenedorTotal{
+        @include flexbox_style(flex-end, center, wrap, column);
+        width: 50%;
+        padding: 20px 0 ;
+        margin: 20px 0 ;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50px;
+        text-align: center;
+        .contenedorBotones{
+            @include flexbox_style(space-around, center, wrap, row);
+            button{
+                @include fondo-botones(5px);
+            }
+        }
+    }
+}
