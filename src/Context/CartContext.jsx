@@ -10,8 +10,11 @@ export const CartProvider = ({children})=>{
         setCart([...cart, item])
     }
 
-    const buscarItem = (id) =>{
-        return cart.find((item)=>item.id === id)
+    const borrarItem = (id) =>{
+        //filtramos los items que no sean del ID al cual le hicimos clic
+        const item=cart.filter((item)=>item.id !== id)
+        // ingresamos el resultado de la variable
+        setCart(item)
     }
 
     const IsInCart = (id)=>{
@@ -29,7 +32,7 @@ export const CartProvider = ({children})=>{
 
 return (
         <CartContext.Provider
-        value={{cart, setCart, AddCart, SumaCantidad, SumaTotal, buscarItem, IsInCart}}>
+        value={{cart, setCart, AddCart, SumaCantidad, SumaTotal, borrarItem, IsInCart}}>
             {children}
         </CartContext.Provider>
     )

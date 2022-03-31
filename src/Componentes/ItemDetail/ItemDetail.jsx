@@ -6,7 +6,7 @@ import { ItemCount } from '../ItemCount/ItemCount'
 export const ItemDetail=({id, comen, pican, tipo, img, venta, cantidad, setCantidad})=> {
   
   
-  const {AddCart, IsInCart, buscarItem, cart, setCart } = useContext(CartContext)
+  const {AddCart, IsInCart} = useContext(CartContext)
   
 
 

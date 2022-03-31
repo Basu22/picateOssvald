@@ -6,9 +6,7 @@ import { Link } from "react-router-dom";
 
 export const Cart= ()=>{
 
-    const {cart, SumaTotal}=useContext(CartContext)
-    
-    
+    const {cart, SumaTotal, borrarItem}=useContext(CartContext)
     
     return(
         <section className="row g-0 seccionCarrito">
@@ -44,8 +42,8 @@ export const Cart= ()=>{
                     <p>Subtotal</p>
                     <p>${(i.venta * i.cantidad).toFixed(2)}</p>
                 </article>
-                <article>
-                    <FaTrashAlt id={i.id} />
+                <article onClick={()=>borrarItem(i.id)}>
+                        <FaTrashAlt id={i.id}/>
                 </article>
             </article>
             )}
