@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import {ItemList} from '../ItemList/ItemList';
-import { GetData } from '../GetData/GetData'
+import { ItemList } from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import { Loading } from '../Loading/Loading';
-
+import { db } from "../../Helpers/Firebase"
+import { collection,getDocs, query, where } from 'firebase/firestore';
 
 export const ItemListContainer=({gretting})=> {
 
@@ -14,22 +14,24 @@ export const ItemListContainer=({gretting})=> {
 
   useEffect(()=>{
     setLoading(true)
-      GetData()
-        .then((data)=> {
-          if(categoryId){
-            const filtro = data.filter((el)=>el.tipo===categoryId)
-            setProductos(filtro)
-          }else{
-            setProductos(data)
+    // armo la referencia a mi colección
+    const dataProductos = collection(db, 'Items')
+    const q = categoryId?query( dataProductos, where("tipo", "==", categoryId )):dataProductos
+    
+    getDocs(q)
+      .then((res)=>{
+        //primero entro a docs y recorro con un maps hasta llegar a data()
+        setProductos(res.docs.map((doc)=>{
+          return{
+              id:doc.id,
+              ...doc.data()
           }
-        })
-        .catch((err)=>{
-          console.log(err)
-        })
-        .finally(()=>{
-          setLoading(false)
-        })
-    },[categoryId])
+        }))
+      })
+      .finally(()=>{
+        setLoading(false)
+      })
+  },[categoryId])
 
 
   return (
