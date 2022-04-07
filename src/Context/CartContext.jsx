@@ -5,34 +5,66 @@ export const CartContext = createContext()
 export const CartProvider = ({children})=>{
 
     const [cart, setCart] = useState([])
+    const [stock, setStock] = useState(0)
 
-    const AddCart = (item)=>{
-        setCart([...cart, item])
+    const AddCart = (item, quantity)=>{
+        //chequeamos si existe el item dentro del carrito 
+        if (IsInCart(item.id)){
+            //traemos todos los items del carrito del momento
+            const lecturaCarrito = [...cart]
+            //hacemos un find del producto que estamos clickeando
+            const cartFind = lecturaCarrito.find((i)=>i.id = item.id)
+            //de ahi tomamos la cantidad y le agregamos la cantidad que sumo el carrito
+            cartFind.quantity = cartFind.quantity + quantity
+            //y hago un setCart de la lectura inicial del carrrito con la modificación.
+            setCart(lecturaCarrito)
+        }else{
+            //sino agregamos un nuevo producto con info + cantidad
+            const nuevoProducto={
+                item,
+                quantity
+            }
+            //ingresamos el nuevo registro en cart
+            setCart([...cart, nuevoProducto])
+        }
+    }
+
+    
+    const clear =()=>{
+        setCart([]);
     }
 
     const borrarItem = (id) =>{
         //filtramos los items que no sean del ID al cual le hicimos clic
-        const item=cart.filter((item)=>item.id !== id)
+        const item=cart.filter((i)=>i.item.id !== id)
         // ingresamos el resultado de la variable
         setCart(item)
     }
 
     const IsInCart = (id)=>{
-        return cart.some((item)=>item.id === id)
+        return cart.some((i)=>i.item.id === id)
     }
 
-    const SumaCantidad = ()=>{
-        return cart.reduce((acc, item)=> acc + item.cantidad,0)
+    const cantidadTotal= ()=>{
+        return cart.reduce((acc,i)=> acc + i.quantity, 0)
     }
 
-    const SumaTotal=()=>{
-        return cart.reduce((acc, item)=> acc + (item.venta * item.cantidad),0)
+    const sumaTotal=()=>{
+        return cart.reduce((acc, i)=> acc + (i.item.venta * i.quantity),0)
     }
+
 
 
 return (
         <CartContext.Provider
-        value={{cart, setCart, AddCart, SumaCantidad, SumaTotal, borrarItem, IsInCart}}>
+        value={
+            {cart, 
+            setCart, 
+            AddCart, 
+            sumaTotal, 
+            borrarItem, 
+            IsInCart,
+            cantidadTotal}}>
             {children}
         </CartContext.Provider>
     )

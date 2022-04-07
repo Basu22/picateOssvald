@@ -8,7 +8,6 @@ import { db } from '../../Helpers/Firebase'
 export const ItemDetailContainer=()=> {
 
     const [detalleProductos, setDetalleProductos] = useState([])
-    const [cantidad, setCantidad]=useState(0);
     const [loading, setLoading] = useState(false)
     const {id} = useParams()
 
@@ -25,7 +24,6 @@ export const ItemDetailContainer=()=> {
         .finally(()=>{
             setLoading(false)
         })
-
     },[id])
 
     return (
@@ -34,9 +32,7 @@ export const ItemDetailContainer=()=> {
         ?<Loading/>
         :<ItemDetail 
             {...detalleProductos}  
-            cantidad={cantidad}
-            setCantidad={setCantidad}
         />}
-        </>   
+        </>
     )
 }
