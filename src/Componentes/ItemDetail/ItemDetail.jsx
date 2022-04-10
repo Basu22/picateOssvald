@@ -32,7 +32,7 @@ export const ItemDetail=({id, comen, pican, tipo, img, venta, stock})=> {
               <h3>Precio:$ {venta}</h3>
             </article>
             {
-            <ItemCount 
+            <ItemCount
                 stock={stock}
                 onAdd={onAdd}/>
             }

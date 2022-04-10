@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export const Cart= ()=>{
 
-    const {cart, sumaTotal, borrarItem}=useContext(CartContext)
+    const {cart, sumaTotal, borrarItem, clear}=useContext(CartContext)
     
     return(
         <section className="row g-0 seccionCarrito">
@@ -58,6 +58,7 @@ export const Cart= ()=>{
                     <Link to="/">
                         <button>Seguir Comprando</button>
                     </Link>
+                    <button onClick={clear}>Vaciar Carrito</button>
                 </>
                 :   <Link to="/">
                         <button>Ir a Comprar</button>

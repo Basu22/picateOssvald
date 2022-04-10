@@ -26,6 +26,8 @@ export const ItemDetailContainer=()=> {
         })
     },[id])
 
+
+
     return (
         <>
         {loading

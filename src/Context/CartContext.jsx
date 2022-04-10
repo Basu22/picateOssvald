@@ -5,7 +5,7 @@ export const CartContext = createContext()
 export const CartProvider = ({children})=>{
 
     const [cart, setCart] = useState([])
-    const [stock, setStock] = useState(0)
+
 
     const AddCart = (item, quantity)=>{
         //chequeamos si existe el item dentro del carrito 
@@ -13,10 +13,9 @@ export const CartProvider = ({children})=>{
             //traemos todos los items del carrito del momento
             const lecturaCarrito = [...cart]
             //hacemos un find del producto que estamos clickeando
-            const cartFind = lecturaCarrito.find((i)=>i.id = item.id)
+            const cartFind = lecturaCarrito.find((i)=>i.item.id === item.id)
             //de ahi tomamos la cantidad y le agregamos la cantidad que sumo el carrito
             cartFind.quantity = cartFind.quantity + quantity
-            //y hago un setCart de la lectura inicial del carrrito con la modificación.
             setCart(lecturaCarrito)
         }else{
             //sino agregamos un nuevo producto con info + cantidad
@@ -29,7 +28,6 @@ export const CartProvider = ({children})=>{
         }
     }
 
-    
     const clear =()=>{
         setCart([]);
     }
@@ -64,7 +62,8 @@ return (
             sumaTotal, 
             borrarItem, 
             IsInCart,
-            cantidadTotal}}>
+            cantidadTotal,
+            clear}}>
             {children}
         </CartContext.Provider>
     )
