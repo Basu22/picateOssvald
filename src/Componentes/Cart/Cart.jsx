@@ -53,8 +53,10 @@ export const Cart= ()=>{
                 <article className="contenedorBotones">
                 {
                 (cart.length>0)
-                ?<>                
-                    <button>Finalizar Compra</button>
+                ?<>
+                    <Link to="/formularioCompra">
+                        <button>Finalizar Compra</button>
+                    </Link>
                     <Link to="/">
                         <button>Seguir Comprando</button>
                     </Link>

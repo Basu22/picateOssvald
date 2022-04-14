@@ -7,11 +7,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './SCSS/styles.scss';
 import  {CartProvider}  from './Context/CartContext'
 import { Cart } from './Componentes/Cart/Cart'
+import { FormularioCompra } from './Componentes/FormularioCompra/FormularioCompra'
+
 
 export default function App() {
   return (
     <>
-    <React.StrictMode>
 
       <CartProvider>
 
@@ -24,13 +25,13 @@ export default function App() {
             <Route path="/tablas/:categoryId" element={<ItemListContainer gretting="Tabla"/>} />
             <Route path="/detalle/:id" element={<ItemDetailContainer/>}/>
             <Route path="/cart" element={<Cart/>}/>
+            <Route path="/formularioCompra" element={<FormularioCompra/>}/>
           </Routes>
 
         </BrowserRouter>
       
       </CartProvider>
     
-    </React.StrictMode>
     </>
   )
 }
