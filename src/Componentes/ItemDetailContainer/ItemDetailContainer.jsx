@@ -26,7 +26,6 @@ export const ItemDetailContainer=()=> {
         })
     },[id])
     
-    console.log(detalleProductos)
     
     return (
         <>
