@@ -7,34 +7,33 @@ import { ItemDetail } from './ItemDetail/ItemDetail'
 import { BackPage } from '../BackPage/BackPage'
 
 export const ItemDetailContainer=()=> {
-
+    const [estadoConexion, setEstadoConexion]=useState(true)
     const [detalleProductos, setDetalleProductos] = useState([])
     const [loading, setLoading] = useState(false)
     const {id} = useParams()
 
-
-
     useEffect(()=>{
         setLoading(true)
         const dataProductos = doc(db, 'Items', id) 
-
+        
         getDoc(dataProductos)
         .then((res)=>{
             setDetalleProductos({id:res.id,...res.data()}) 
+            setEstadoConexion((res.data()===undefined)?false:true)
         })
         .finally(()=>{
             setLoading(false)
         })
     },[id])
-
-
-
+    
+    console.log(detalleProductos)
+    
     return (
         <>
         {
         loading
         ?<Loading/>
-        :(detalleProductos.venta)?<ItemDetail {...detalleProductos}/>:<BackPage />
+        :(estadoConexion)?<ItemDetail {...detalleProductos}/>:<BackPage />
         }
         </>
     )
