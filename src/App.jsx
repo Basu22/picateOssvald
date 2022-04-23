@@ -7,7 +7,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './SCSS/styles.scss';
 import  {CartProvider}  from './Context/CartContext'
 import { Cart } from './Componentes/Cart/Cart'
-import { FormularioCompra } from './Componentes/FormularioCompra/FormularioCompra'
+import { FormContainer } from './Componentes/FormContainer/FormContainer'
+import { BackPage } from './Componentes/BackPage/BackPage'
 
 
 export default function App() {
@@ -15,7 +16,7 @@ export default function App() {
     <>
 
       <CartProvider>
-
+      
         <BrowserRouter>
           
           <NavBar />
@@ -25,9 +26,10 @@ export default function App() {
             <Route path="/tablas/:categoryId" element={<ItemListContainer gretting="Tabla"/>} />
             <Route path="/detalle/:id" element={<ItemDetailContainer/>}/>
             <Route path="/cart" element={<Cart/>}/>
-            <Route path="/formularioCompra" element={<FormularioCompra/>}/>
+            <Route path="/formularioCompra" element={<FormContainer/>}/>
+            <Route path="*" element={<BackPage/>}/>
           </Routes>
-
+          
         </BrowserRouter>
       
       </CartProvider>

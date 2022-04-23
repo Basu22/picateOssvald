@@ -1,9 +1,18 @@
 @import './variables.scss';
 @import '../Componentes/NavBar/NavBar.scss';
+//RAMA ITEMLISTCONTAINER
 @import '../Componentes/ItemListContainer/ItemListContainer.scss';
-@import '../Componentes/ItemList/ItemList.scss';
-@import '../Componentes/Item/Item.scss';
-@import '../Componentes/ItemCount/ItemCount.scss';
-@import '../Componentes/ItemDetail/ItemDetail.scss';
+@import '../Componentes/ItemListContainer/ItemList/ItemList.scss';
+@import '../Componentes/ItemListContainer/ItemList/Item/Item.scss';
+//RAMA ITEMDETAILCONTAINER
+@import '../Componentes/ItemDetailContainer/ItemDetail/ItemCount/ItemCount.scss';
+@import '../Componentes/ItemDetailContainer/ItemDetail/ItemDetail.scss';
+// RAMA FORMULARIOCONTAINER
+@import '../Componentes/FormContainer/FormContainer.scss';
+@import '../Componentes/FormContainer/BuyResume/BuyResume.scss';
+@import '../Componentes/FormContainer/FormBuyer/FormBuyer.scss';
+//VARIOS
+@import '../Componentes/BackPage/BackPage.scss';
 @import '../Componentes/Loading/Loading.scss';
-@import '../Componentes/Cart/Cart.scss'
+@import '../Componentes/Cart/Cart.scss';
+@import '../Componentes/Buttons/buttons.scss';

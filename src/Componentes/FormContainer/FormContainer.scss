@@ -1,0 +1,14 @@
+
+.contenedorOrden{
+    @include flexbox_style (center,center,wrap,column);
+    .numeroOrden{
+        @include flexbox_style (center,center,wrap,column);
+        align-items: center;
+        padding: 15px;
+        width: 50%;
+        height: 50vh;
+        background-color: #fff;
+        border: 3px solid #000;
+        border-radius: 5%;
+    }
+}

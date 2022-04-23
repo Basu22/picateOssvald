@@ -1,12 +1,15 @@
 import { useContext } from "react"
 import { CartContext } from "../../Context/CartContext"
 import { FaTrashAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FinalizarCompra } from "../Buttons/FinalizarCompra";
+import { Volver } from "../Buttons/Volver";
+import { VaciarCarrito } from "../Buttons/VaciarCarrito";
+import { Comprar } from "../Buttons/Comprar";
 
 
 export const Cart= ()=>{
 
-    const {cart, sumaTotal, borrarItem, clear}=useContext(CartContext)
+    const {cart, sumaTotal, borrarItem}=useContext(CartContext)
     
     return(
         <section className="row g-0 seccionCarrito">
@@ -14,7 +17,7 @@ export const Cart= ()=>{
                 <h1>Carrito de Compras</h1>
             </article>
             {cart.map((i)=>
-            <article key={i.id} className="containerCarrito">
+            <article key={i.item.id} className="containerCarrito">
                 <article className="contenedorImagen">
                     <img src={i.item.img} alt=""/>
                 </article>
@@ -54,18 +57,11 @@ export const Cart= ()=>{
                 {
                 (cart.length>0)
                 ?<>
-                    <Link to="/formularioCompra">
-                        <button>Finalizar Compra</button>
-                    </Link>
-                    <Link to="/">
-                        <button>Seguir Comprando</button>
-                    </Link>
-                    <button onClick={clear}>Vaciar Carrito</button>
+                    <FinalizarCompra />
+                    <Volver nombre="Seguir Comprando" />
+                    <VaciarCarrito />
                 </>
-                :   <Link to="/">
-                        <button>Ir a Comprar</button>
-                    </Link>   
-                
+                :   <Comprar />
                 }
                 </article>
             </article>

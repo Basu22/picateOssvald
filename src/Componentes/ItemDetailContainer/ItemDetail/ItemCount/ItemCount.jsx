@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { useParams } from "react-router-dom"
-import { CartContext } from "../../Context/CartContext"
+import { CartContext } from "../../../../Context/CartContext"
 
 export const ItemCount=({stock,onAdd}) =>{
 

@@ -1,4 +1,4 @@
-import {productos} from '../../Json/productos.js'
+import {productos} from '../Json/productos.js'
 
 export const GetData = () =>{
     return new Promise( (res,rej) => {

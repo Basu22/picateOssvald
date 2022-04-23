@@ -1,0 +1,18 @@
+.contenedorErrorPagina{
+    margin-top: 15px;
+    @include flexbox-style(center,center,wrap,column);
+    .errorPagina{
+        @include flexbox-style(center,center,wrap,column);
+        padding: 20px;
+        border-radius: 5%;
+        width: 70%;
+        background-color: gray;
+        align-items: center;
+        color: #fff;
+        box-shadow: 0px 0px 5px 10px #fff;
+        img{
+            width: 20%;
+            padding: 15px;
+        }
+    }
+}

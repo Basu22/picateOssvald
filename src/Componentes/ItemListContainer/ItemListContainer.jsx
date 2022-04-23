@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ItemList } from '../ItemList/ItemList';
+import { ItemList } from './ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import { Loading } from '../Loading/Loading';
 import { db } from "../../Helpers/Firebase"

@@ -33,11 +33,8 @@
         border-radius: 50px;
         text-align: center;
         .contenedorBotones{
-            @include flexbox_style(space-around, center, wrap, row);
-            button{
-                @include fondo-botones(5px);
-                padding: 5px;
-            }
+            width: 100%;
+            @include flexbox_style(space-evenly, center, wrap, row);
         }
     }
 }

@@ -1,9 +1,10 @@
 import { useState,useEffect } from 'react'
-import {ItemDetail} from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 import { Loading } from '../Loading/Loading'
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '../../Helpers/Firebase'
+import { ItemDetail } from './ItemDetail/ItemDetail'
+import { BackPage } from '../BackPage/BackPage'
 
 export const ItemDetailContainer=()=> {
 
@@ -30,11 +31,11 @@ export const ItemDetailContainer=()=> {
 
     return (
         <>
-        {loading
+        {
+        loading
         ?<Loading/>
-        :<ItemDetail 
-            {...detalleProductos}  
-        />}
+        :(detalleProductos.venta)?<ItemDetail {...detalleProductos}/>:<BackPage />
+        }
         </>
     )
 }

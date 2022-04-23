@@ -1,0 +1,11 @@
+dentro del que es dependencias se agregaron:
+
+1. date-fns: se agregó para poder dar formato a la fecha y hora de los datos de compra enviados a FIREBASE.
+
+2. react-icons: se tomo para poder usar los iconos de trash en el cart utilizando para eliminar los productos. 
+
+3. bootstrap: se utiliza para poder trabajar con flexbox en HTML.
+
+4. sass: se utiliza la dependencia para trabajar con SASS directamente en la herramienta.
+
+5. firebase: se utiliza la conexión directa a la base de datos de firebase. 

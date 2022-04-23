@@ -1,0 +1,26 @@
+.contenedorResumen{
+    padding: 15px;
+    width: 80%;
+    background-color: #fff;
+    border: 3px solid #000;
+    border-radius: 5%;
+    @include flexbox_style (center,center,wrap,column);
+    .contenedorTitulo{
+        text-align: center;
+    }
+    .contenedorItems{
+        border: 1px solid #000;
+        border-radius: 5%;
+        margin: 10px 0;
+        padding: 10px 0;
+        .contenedorImagen{
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .contenedorTotal{
+        @include flexbox_style(center,center,wrap,column);
+        align-items: center;
+    }
+}
